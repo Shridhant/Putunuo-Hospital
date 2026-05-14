@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -9,13 +9,10 @@ import News from "./pages/News";
 import About from "./pages/About";
 
 function AppShell() {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
-
   return (
-    <main className="flex min-h-screen flex-col bg-white font-inter selection:bg-brand-navy selection:text-white">
-      {!isHome && <Navbar />}
-      <div className="flex-grow">
+    <main className="flex min-h-screen flex-col bg-[#f5f1ea] font-inter text-slate-900 selection:bg-slate-900 selection:text-white">
+      <Navbar />
+      <div className="flex-grow pt-24 pb-8">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -23,7 +20,7 @@ function AppShell() {
           <Route path="/news" element={<News />} />
         </Routes>
       </div>
-      {!isHome && <Footer />}
+      <Footer />
     </main>
   );
 }

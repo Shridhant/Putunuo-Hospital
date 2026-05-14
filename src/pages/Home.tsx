@@ -1,25 +1,14 @@
-import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import {
   ArrowRight,
   ArrowUpRight,
   ChevronLeft,
   ChevronRight,
-  Menu,
   Play,
   Star,
-  X,
 } from "lucide-react";
-
-const nav = [
-  { label: "Home", to: "/" },
-  { label: "About us", to: "/about" },
-  { label: "Specialties", to: "/specialties" },
-  { label: "News", to: "/news" },
-  { label: "Contact us", to: "/" },
-];
+import FadeIn from "../components/FadeIn";
 
 const brands = ["Critical Care", "Cardiology", "Surgery", "Neurology", "Wellness"];
 const tabs = ["All", "Facilities", "Diagnostics", "Care", "Recovery", "Wellness"];
@@ -134,32 +123,9 @@ const reviews = [
   },
 ];
 
-function FadeIn({
-  children,
-  delay = 0,
-  className,
-}: {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export default function Home() {
   const [slide, setSlide] = useState(0);
   const [hoverIdx, setHoverIdx] = useState(0);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("All");
   const [reviewIdx, setReviewIdx] = useState(0);
 
@@ -183,74 +149,8 @@ export default function Home() {
 
   return (
     <div className="bg-[#f5f1ea] font-inter text-slate-900">
-      <section className="px-3 pt-3 md:px-6 md:pt-6">
+      <section className="px-3 pt-3 md:px-6">
         <div className="mx-auto max-w-[1280px]">
-          <FadeIn>
-            <header className="relative z-20 rounded-[24px] bg-white/95 px-3 py-2 shadow-[0_16px_50px_rgba(15,23,42,0.08)] md:rounded-full">
-              <div className="flex items-center justify-between gap-3">
-                <Link to="/" className="flex items-center gap-3 pl-2">
-                  <img src="/logo.png" alt="Putunuo Hospital" className="h-10 w-10 rounded-full object-cover" />
-                  <div>
-                    <div className="font-geist text-lg font-semibold tracking-tight text-slate-900">
-                      Putunuo
-                    </div>
-                    <div className="text-[10px] uppercase tracking-[0.3em] text-slate-500">
-                      Hospital
-                    </div>
-                  </div>
-                </Link>
-                <nav className="hidden gap-7 text-[13px] text-slate-500 md:flex">
-                  {nav.map((item) => (
-                    <Link key={item.label} to={item.to} className="transition-colors hover:text-slate-900">
-                      {item.label}
-                    </Link>
-                  ))}
-                </nav>
-                <div className="flex items-center gap-2">
-                  <button className="hidden rounded-full bg-[#d9b15d] px-5 py-2.5 text-[13px] font-medium text-slate-950 transition hover:brightness-95 sm:inline-flex">
-                    Book Appointment
-                  </button>
-                  <button
-                    type="button"
-                    aria-label={menuOpen ? "Close menu" : "Open menu"}
-                    aria-expanded={menuOpen}
-                    onClick={() => setMenuOpen((open) => !open)}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-900 transition hover:bg-slate-50 md:hidden"
-                  >
-                    {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-                  </button>
-                </div>
-              </div>
-              <AnimatePresence>
-                {menuOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -8, filter: "blur(8px)" }}
-                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    exit={{ opacity: 0, y: -8, filter: "blur(8px)" }}
-                    transition={{ duration: 0.25 }}
-                    className="mt-3 border-t border-slate-200 px-1 pb-2 pt-3 md:hidden"
-                  >
-                    <nav className="grid gap-1 text-[13px] text-slate-500">
-                      {nav.map((item) => (
-                        <Link
-                          key={item.label}
-                          to={item.to}
-                          onClick={() => setMenuOpen(false)}
-                          className="rounded-full px-3 py-2 transition hover:bg-slate-100 hover:text-slate-900"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </nav>
-                    <button className="mt-3 w-full rounded-full bg-[#d9b15d] px-5 py-2.5 text-[13px] font-medium text-slate-950 transition hover:brightness-95 sm:hidden">
-                      Book Appointment
-                    </button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </header>
-          </FadeIn>
-
           <FadeIn delay={0.08}>
             <div className="relative mt-3 overflow-hidden rounded-[28px]">
               <img
@@ -738,51 +638,6 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="mx-auto mt-24 max-w-[1280px] px-3 pb-6 md:px-6">
-        <FadeIn>
-          <div className="rounded-[28px] bg-slate-950 p-8 text-white md:p-12">
-            <div className="grid gap-10 md:grid-cols-3">
-              <div>
-                <div className="flex items-center gap-3">
-                  <img src="/logo.png" alt="Putunuo Hospital" className="h-12 w-12 rounded-full object-cover" />
-                  <div className="font-geist text-2xl font-medium tracking-tight">Putunuo Hospital</div>
-                </div>
-              </div>
-              <p className="text-[13px] leading-relaxed text-white/55">
-                A modern hospital environment focused on specialist treatment, compassionate care,
-                and a patient journey designed with greater calm and clarity.
-              </p>
-              <div>
-                <div className="text-[13px]">Stay connected</div>
-                <div className="mt-3 flex items-center justify-between rounded-full border border-white/20 px-4 py-2">
-                  <input
-                    className="w-full bg-transparent text-[13px] placeholder-white/40 outline-none"
-                    placeholder="Your Email Address"
-                  />
-                  <ArrowRight className="h-4 w-4 shrink-0" />
-                </div>
-              </div>
-            </div>
-            <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-[11px] text-white/45 md:flex-row md:items-center md:justify-between">
-              <div className="flex gap-4 uppercase tracking-[0.2em]">
-                <a href="/" className="transition hover:text-white">
-                  Instagram
-                </a>
-                <a href="/" className="transition hover:text-white">
-                  Twitter
-                </a>
-                <a href="/" className="transition hover:text-white">
-                  LinkedIn
-                </a>
-                <a href="/" className="transition hover:text-white">
-                  Facebook
-                </a>
-              </div>
-              <div>Putunuo Hospital, all rights reserved 2026</div>
-            </div>
-          </div>
-        </FadeIn>
-      </footer>
     </div>
   );
 }
@@ -793,7 +648,6 @@ function ProjectCard({
   sub,
   category,
   note,
-  wide,
 }: {
   img: string;
   title: string;

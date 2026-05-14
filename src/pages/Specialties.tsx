@@ -1,5 +1,5 @@
-import { motion } from "motion/react";
-import { Stethoscope, HeartPulse, Brain, Baby, Bone, Eye } from "lucide-react";
+import { ArrowRight, Stethoscope, HeartPulse, Brain, Baby, Bone, Eye } from "lucide-react";
+import FadeIn from "../components/FadeIn";
 
 const specialties = [
   { id: 1, name: "Cardiology", desc: "Expert care for your heart with advanced diagnostics.", icon: HeartPulse },
@@ -12,53 +12,44 @@ const specialties = [
 
 export default function Specialties() {
   return (
-    <div className="min-h-screen bg-brand-light pb-24">
+    <div className="min-h-screen pb-24">
       {/* Header Section */}
-      <section className="w-full px-6 md:px-12 lg:px-24 pt-20 pb-16 bg-white text-center">
-        <motion.div
-          initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
-          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="inline-block border border-gray-300 rounded-full px-4 py-1 text-xs font-medium text-gray-500 mb-6">
+      <section className="w-full px-6 md:px-12 lg:px-24 pt-12 pb-16 text-center">
+        <FadeIn>
+          <div className="inline-flex items-center rounded-full border border-slate-300 bg-white px-4 py-1.5 text-[11px] uppercase tracking-[0.22em] text-slate-500 mb-6">
             OUR SERVICES
           </div>
-          <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-medium text-brand-navy mb-6">
+          <h1 className="font-geist text-[42px] md:text-[56px] lg:text-[64px] font-medium tracking-tight text-slate-950 mb-6">
             Medical Specialties
           </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-[14px] leading-7 max-w-2xl mx-auto">
             We offer a wide range of medical services tailored to your needs, providing expert care across multiple disciplines under one roof.
           </p>
-        </motion.div>
+        </FadeIn>
       </section>
 
       {/* Specialties Grid */}
-      <section className="w-full px-6 md:px-12 lg:px-24 pt-16">
+      <section className="w-full max-w-[1280px] mx-auto px-6 md:px-12 lg:px-24 pt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {specialties.map((spec, index) => {
             const Icon = spec.icon;
             return (
-              <motion.div
-                key={spec.id}
-                initial={{ opacity: 0, filter: "blur(10px)", y: 30 }}
-                whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="w-14 h-14 bg-brand-light text-brand-navy rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-navy group-hover:text-white transition-colors duration-300">
-                  <Icon size={28} />
+              <FadeIn key={spec.id} delay={index * 0.1}>
+                <div className="bg-white p-8 rounded-[28px] shadow-[0_8px_30px_rgba(15,23,42,0.04)] border border-slate-200/60 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)] hover:-translate-y-1 transition-all duration-300 group h-full flex flex-col">
+                  <div className="w-14 h-14 bg-slate-50 border border-slate-100 text-slate-900 rounded-[18px] flex items-center justify-center mb-6 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <Icon size={24} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-geist font-medium text-[22px] tracking-tight text-slate-950 mb-3">
+                    {spec.name}
+                  </h3>
+                  <p className="text-slate-600 text-[13px] leading-relaxed mb-8 flex-grow">
+                    {spec.desc}
+                  </p>
+                  <button className="flex items-center gap-2 text-[12px] font-medium text-slate-900 group-hover:gap-3 transition-all">
+                    Learn more <ArrowRight size={14} />
+                  </button>
                 </div>
-                <h3 className="font-playfair font-semibold text-xl text-brand-navy mb-3">
-                  {spec.name}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                  {spec.desc}
-                </p>
-                <button className="text-sm font-semibold text-brand-navy group-hover:underline">
-                  Learn more →
-                </button>
-              </motion.div>
+              </FadeIn>
             );
           })}
         </div>
