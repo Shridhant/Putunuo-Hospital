@@ -1,41 +1,16 @@
 import { motion } from "motion/react";
 
 const steps = [
-  {
-    num: "01",
-    title: "CHOOSE YOUR SERVICES",
-    desc: "Navigate our comprehensive specialties to find the expertise you need.",
-  },
-  {
-    num: "02",
-    title: "SELECT YOUR DOCTOR",
-    desc: "Browse through our skilled professionals and pick a doctor that aligns with your preferences.",
-  },
-  {
-    num: "03",
-    title: "PICK YOUR PREFERRED DATE AND TIME",
-    desc: "Choose a date and time slot that fits seamlessly into your schedule.",
-  },
-  {
-    num: "04",
-    title: "PROVIDE NECESSARY INFORMATION",
-    desc: "Fill out a straightforward form with the required medical information, ensuring your visit goes smoothly.",
-  },
-  {
-    num: "05",
-    title: "SECURE CONFIRMATION",
-    desc: "Receive instant confirmation of your scheduled appointment, along with any additional details you may need.",
-  },
+  { num: "01", title: "CHOOSE YOUR SERVICES", desc: "Navigate our comprehensive specialties to find the expertise you need." },
+  { num: "02", title: "SELECT YOUR DOCTOR", desc: "Browse through our skilled professionals and pick a doctor that aligns with your preferences." },
+  { num: "03", title: "PICK YOUR PREFERRED DATE AND TIME", desc: "Choose a date and time slot that fits seamlessly into your schedule." },
+  { num: "04", title: "PROVIDE NECESSARY INFORMATION", desc: "Fill out a straightforward form with the required medical information, ensuring your visit goes smoothly." },
+  { num: "05", title: "SECURE CONFIRMATION", desc: "Receive instant confirmation of your scheduled appointment, along with any additional details you may need." },
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
 };
 
 const itemVariants = {
@@ -50,7 +25,7 @@ export default function Booking() {
         HOW IT WORKS
       </div>
 
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
         whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -60,7 +35,7 @@ export default function Booking() {
         A SEAMLESS SERVICE AT YOUR FINGERTIPS: BOOK AN APPOINTMENT TODAY FOR THE BEST CARE IN THE INDUSTRY
       </motion.h2>
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -68,7 +43,7 @@ export default function Booking() {
         className="flex flex-col w-full"
       >
         {steps.map((step, idx) => (
-          <motion.div 
+          <motion.div
             key={idx}
             variants={itemVariants}
             className="flex flex-col md:flex-row md:items-center py-8 border-b border-gray-300 last:border-b-0 gap-4 md:gap-12 hover:bg-gray-50 transition-colors px-4 -mx-4 rounded-lg"
@@ -76,11 +51,9 @@ export default function Booking() {
             <div className="text-xs font-bold text-gray-400 min-w-16">
               {step.num} . STEP
             </div>
-            
             <h3 className="font-playfair font-medium text-xl text-brand-navy md:w-1/3">
               {step.title}
             </h3>
-            
             <p className="text-sm text-gray-500 md:w-1/2 leading-relaxed">
               {step.desc}
             </p>

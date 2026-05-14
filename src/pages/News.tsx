@@ -50,7 +50,7 @@ export default function News() {
             LATEST UPDATES
           </div>
           <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-medium text-brand-navy mb-6">
-            News & Articles
+            News &amp; Articles
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Stay informed with the latest updates from Putuonuo Hospital, including health tips, technological advancements, and community events.
@@ -70,19 +70,14 @@ export default function News() {
               transition={{ duration: 0.7, delay: index * 0.15 }}
               className="group cursor-pointer flex flex-col"
             >
-              {/* Image Placeholder with modern hover effects */}
               <div className="w-full aspect-[16/10] bg-gray-100 rounded-2xl mb-6 overflow-hidden relative shadow-sm transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
                 <div className="absolute inset-0 bg-brand-navy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                {/* Actual Image */}
                 <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                
-                {/* Floating Date Badge */}
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-xs font-bold text-brand-navy z-20 shadow-sm">
                   {item.date}
                 </div>
               </div>
 
-              {/* Content */}
               <div className="flex flex-col flex-1 px-2">
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-xs font-bold tracking-wider text-gray-400 uppercase">
@@ -101,9 +96,9 @@ export default function News() {
           ))}
         </div>
       </section>
-      
+
       {/* Load More */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -114,7 +109,6 @@ export default function News() {
           LOAD MORE ARTICLES
         </button>
       </motion.div>
-
     </div>
   );
 }

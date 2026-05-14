@@ -1,69 +1,57 @@
 import { motion } from "motion/react";
-import { Star } from "lucide-react";
+import { Quote } from "lucide-react";
 
 export default function Testimonials() {
   return (
-    <section className="w-full px-6 md:px-12 lg:px-24 py-32 bg-white flex flex-col items-center text-center">
-      <div className="inline-block border border-gray-300 rounded-full px-4 py-1 text-xs font-medium text-gray-500 mb-8">
-        TESTIMONIALS
-      </div>
+    <section className="w-full px-6 md:px-12 lg:px-24 py-24 bg-white flex flex-col items-center justify-center relative overflow-hidden pt-32">
 
-      <motion.h2 
-        initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
-        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-        className="font-playfair text-3xl md:text-5xl font-medium text-brand-navy max-w-3xl leading-tight mb-20"
-      >
-        WE INVITE YOU TO LISTEN TO WHAT OUR MEMBER HAVE TO SAY ABOUT OUR WELLNESS SERVICES
-      </motion.h2>
+      {/* Decorative semi-circle background */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full border border-gray-100 bg-transparent -translate-y-1/2 pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] rounded-full border border-gray-50 bg-transparent -translate-y-1/2 pointer-events-none" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 max-w-5xl w-full text-left relative">
-        {/* Divider line for desktop */}
-        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-200"></div>
-
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-col pr-0 md:pr-12"
-        >
-          <h4 className="font-bold text-gray-900 mb-4">— MICHAEL CRAIG</h4>
-          <p className="text-gray-600 mb-6 leading-relaxed">
-            "Medical care goes far beyond mere efficiency. It effectively prioritizes my health while also thoroughly explaining the details along the way."
-          </p>
-          <div className="flex gap-1 text-brand-navy">
-            {[1,2,3,4,5].map(i => <Star key={i} size={16} fill="currentColor" strokeWidth={0} />)}
-          </div>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col pl-0 md:pl-12"
-        >
-          <h4 className="font-bold text-gray-900 mb-4">— COLIN JUSTIN</h4>
-          <p className="text-gray-600 mb-6 leading-relaxed">
-            "Their attentive approach during each appointment is outstanding. I consistently leave feeling confident about my well-being."
-          </p>
-          <div className="flex gap-1 text-brand-navy">
-            {[1,2,3,4,5].map(i => <Star key={i} size={16} fill="currentColor" strokeWidth={0} />)}
-          </div>
-        </motion.div>
-      </div>
-
-      <motion.button
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="mt-16 border border-gray-300 text-gray-600 px-8 py-2 rounded-full text-xs font-medium hover:bg-gray-50 transition-colors"
+        transition={{ duration: 0.8 }}
+        className="flex flex-col items-center text-center max-w-3xl z-10 relative"
       >
-        SEE MORE
-      </motion.button>
+        <div className="inline-flex items-center gap-2 border border-gray-200 rounded-full px-4 py-1 text-xs font-semibold text-gray-500 mb-8 bg-white">
+          Testimonial <Quote size={12} className="text-gray-400" />
+        </div>
+
+        <p className="font-playfair text-xl md:text-2xl lg:text-3xl text-brand-navy leading-relaxed mb-10">
+          <Quote className="inline-block text-gray-300 mr-2 -translate-y-2" size={24} />
+          With our dedication and expertise in healthcare, we strive to provide services that are not just treatments, but a comforting journey toward better health.
+        </p>
+
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md bg-gray-200">
+            <img src="/hero1.jpg" alt="Azam Muhammad" className="w-full h-full object-cover" />
+          </div>
+          <div className="text-left">
+            <h4 className="font-bold text-sm text-brand-navy">Dr. Azam Muhammad</h4>
+            <p className="text-xs text-gray-500">Chief Medical Officer at Putuonuo</p>
+          </div>
+        </div>
+
+        <div className="mt-12 flex items-center justify-center gap-2">
+          <button className="w-1.5 h-1.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"></button>
+          <button className="w-2 h-2 rounded-full bg-brand-navy"></button>
+          <button className="w-1.5 h-1.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"></button>
+        </div>
+      </motion.div>
+
+      {/* Floating Image overlapping into the footer */}
+      <motion.div
+        initial={{ opacity: 0, y: 50, rotate: -5 }}
+        whileInView={{ opacity: 1, y: 0, rotate: -5 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="absolute -bottom-16 left-12 md:left-24 w-40 h-40 md:w-56 md:h-56 rounded-3xl overflow-hidden shadow-2xl z-20 hidden md:block border-[6px] border-white"
+      >
+        <img src="/hospital2.jpeg" alt="Hospital view" className="w-full h-full object-cover" />
+      </motion.div>
 
     </section>
   );

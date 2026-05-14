@@ -1,63 +1,39 @@
-import { HeartPulse } from "lucide-react";
-
 export default function Footer() {
   return (
-    <footer className="w-full bg-brand-navy text-white px-6 md:px-12 lg:px-24 pt-24 pb-12 overflow-hidden relative">
-      <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-24">
-        
-        <div className="flex flex-col max-w-md">
-          <p className="text-xs text-gray-400 mb-6">Read Our Copyright ©</p>
-          <h3 className="font-playfair text-2xl md:text-3xl font-medium leading-tight mb-8">
-            HEALING LIVES RESTORING SMILES<br />
-            YOUR WELLNESS BEGINS WITH US
-          </h3>
-          <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
-            Kohima nagaland<br />
-            Address: New Market Rd, Daklane, Kohima, Nagaland 797001
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 gap-16">
-          <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-sm tracking-wide mb-2">RESOURCE</h4>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Blog</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Events</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Help Centre</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Support</a>
-          </div>
-          
-          <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-sm tracking-wide mb-2">LEGAL</h4>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Terms</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Cookies</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Settings</a>
-          </div>
-        </div>
-      </div>
-
-      {/* Center Angel Icon Placeholder */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-32 opacity-20 pointer-events-none">
-        <HeartPulse size={120} strokeWidth={1} />
-      </div>
-
-      {/* Bottom Large Text */}
-      <div className="flex justify-between items-end border-t border-white/20 pt-12">
-        <div className="text-xs text-gray-400">
-          <p>Mail</p>
-          <p className="text-white mt-1">hello@putuonuo.com</p>
-        </div>
-        
-        <div className="text-xs text-gray-400 text-right">
-          <p>Phone</p>
-          <p className="text-white mt-1">087873 12687</p>
-        </div>
-      </div>
-
-      <div className="mt-12 overflow-hidden flex justify-center">
-        <h1 className="font-playfair text-[12vw] font-bold text-white tracking-widest leading-none select-none opacity-90">
-          PUTUONUO
+    <footer className="w-full bg-white px-6 md:px-12 lg:px-24 pt-16 pb-8 flex flex-col items-center">
+      {/* Huge Typography */}
+      <div className="w-full overflow-hidden flex justify-center mb-16">
+        <h1 className="font-playfair text-[8vw] md:text-[10vw] font-medium text-brand-navy tracking-tight leading-none whitespace-nowrap text-center">
+          PUTUONUO- CONTACT
         </h1>
+      </div>
+
+      <div className="flex flex-col items-center text-center max-w-2xl mb-16">
+        {/* Links */}
+        <div className="flex gap-8 mb-8 text-sm font-semibold text-gray-700 uppercase tracking-widest">
+          <a href="/about" className="hover:text-brand-navy transition-colors">About Us</a>
+          <a href="#" className="hover:text-brand-navy transition-colors">FAQ</a>
+          <a href="/contact" className="hover:text-brand-navy transition-colors">Contact Us</a>
+        </div>
+
+        {/* Text */}
+        <p className="text-gray-500 text-sm leading-relaxed mb-8">
+          Our top-tier medical facilities offer a comprehensive range of services, including advanced diagnostics, specialized treatment centers, and 24/7 emergency care.
+        </p>
+
+        {/* Social Icons */}
+        <div className="flex gap-6 text-gray-400 text-xs font-bold uppercase tracking-widest">
+          <a href="#" className="hover:text-brand-navy transition-colors">Facebook</a>
+          <a href="#" className="hover:text-brand-navy transition-colors">Instagram</a>
+          <a href="#" className="hover:text-brand-navy transition-colors">Twitter</a>
+          <a href="#" className="hover:text-brand-navy transition-colors">LinkedIn</a>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="w-full border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <p>Helpline: +91 87873 12687</p>
+        <p>© 2026 Putuonuo Hospital. All Rights Reserved.</p>
       </div>
     </footer>
   );

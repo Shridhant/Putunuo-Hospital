@@ -1,65 +1,134 @@
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
+import { ArrowUpRight, Apple, Play } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="w-full pt-20 pb-16 flex flex-col items-center text-center overflow-hidden bg-white">
-      {/* Text Content */}
-      <motion.div 
-        initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
-        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="px-6 md:px-12 max-w-4xl flex flex-col items-center"
-      >
-        <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 leading-[1.15] tracking-tight mb-6">
-          Discover Our Mission and Values in <br className="hidden md:block"/> Patient-Centered Healthcare
-        </h1>
-        <p className="text-gray-500 text-sm md:text-base lg:text-lg mb-10 max-w-2xl leading-relaxed">
-          we are dedicated to providing exceptional healthcare through a compassionate patient-centered approach
-        </p>
+    <section className="w-full bg-brand-light relative pb-16">
+      {/* Background Image Container with curved bottom */}
+      <div className="w-full h-[90vh] md:h-[95vh] relative rounded-b-[3rem] md:rounded-b-[5rem] overflow-hidden shadow-sm">
         
-        <Link 
-          to="/contact"
-          className="border border-blue-500 text-blue-500 hover:bg-blue-50 transition-colors px-8 py-2.5 rounded-full text-sm font-medium"
-        >
-          Contact Us
-        </Link>
-      </motion.div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/25 z-10" />
+        
+        {/* Hero Building Image */}
+        <img
+          src="/hero_building.png"
+          alt="Putuonuo Hospital Building"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
 
-      {/* Media Carousel Layout */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.95, y: 30 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
-        className="relative w-full mt-20 flex justify-center"
-      >
-        <div className="flex items-center justify-center gap-4 md:gap-8 w-max px-4">
-          
-          {/* Left Peeking Image */}
-          <div className="w-[60vw] md:w-[35vw] aspect-[4/3] bg-gray-100 rounded-3xl shrink-0 overflow-hidden relative opacity-70 hover:opacity-100 transition-opacity duration-500 shadow-lg border border-gray-200">
-             <img src="/hero1.jpg" alt="Healthcare professionals" className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-          
-          {/* Center Main Video */}
-          <div className="w-[90vw] md:w-[50vw] aspect-video bg-gray-100 rounded-3xl relative overflow-hidden shadow-2xl z-10 shrink-0 border border-gray-200/50">
-            <iframe 
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/879hfe5qR4I?si=TS54PedzGHN8W_5h" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen
-            ></iframe>
-          </div>
+        {/* Center Content */}
+        <div className="relative z-20 w-full h-full flex flex-col items-center justify-center pt-24 px-6 text-white text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="font-playfair text-4xl md:text-6xl lg:text-7xl font-medium max-w-5xl leading-[1.1] mb-6 drop-shadow-lg"
+          >
+            Discover Hospitals, Access Care,<br className="hidden md:block" /> &amp; Find Trusted Services Nearby
+          </motion.h1>
 
-          {/* Right Peeking Image */}
-          <div className="w-[60vw] md:w-[35vw] aspect-[4/3] bg-gray-100 rounded-3xl shrink-0 overflow-hidden relative opacity-70 hover:opacity-100 transition-opacity duration-500 shadow-lg border border-gray-200">
-             <img src="/hero3.jpg" alt="Medical surgery" className="absolute inset-0 w-full h-full object-cover" />
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="text-sm md:text-base text-white/85 max-w-xl mb-10 leading-relaxed drop-shadow"
+          >
+            Search trusted hospitals for top-notch care and easy appointments, and find the best facilities near your location!
+          </motion.p>
 
+          {/* Find Hospital Pill Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            className="flex items-center bg-white/95 backdrop-blur p-1.5 rounded-full shadow-2xl"
+          >
+            <button className="bg-brand-navy text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center gap-2">
+              Find Hospital
+              <span className="bg-white/20 p-1 rounded-full">
+                <ArrowUpRight size={14} />
+              </span>
+            </button>
+          </motion.div>
         </div>
-      </motion.div>
+
+        {/* ── Floating Bottom Left: Avatars + Info Box ── */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="absolute bottom-16 left-8 md:left-14 z-20 flex flex-col gap-3 hidden md:flex"
+        >
+          {/* Stacked Avatars */}
+          <div className="flex -space-x-3">
+            {["/hero2.jpg", "/hero3.jpg", "/hospital3.jpeg"].map((src, i) => (
+              <div
+                key={i}
+                className="w-11 h-11 rounded-full border-[3px] border-white bg-gray-200 overflow-hidden shadow-md"
+              >
+                <img src={src} alt="Doctor" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          {/* Info Card */}
+          <p className="text-white text-xs font-medium bg-black/25 p-3.5 rounded-xl backdrop-blur-md leading-relaxed border border-white/15 max-w-[200px]">
+            We're committed to delivering a high quality experience in a welcoming and supportive atmosphere.
+          </p>
+        </motion.div>
+
+        {/* ── Floating Bottom Right: Social + App ── */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="absolute bottom-16 right-8 md:right-14 z-20 flex flex-col items-end gap-4 hidden md:flex"
+        >
+          {/* Social Pills */}
+          <div className="flex flex-col gap-2">
+            {["Instagram", "Twitter", "Facebook"].map((s) => (
+              <button
+                key={s}
+                className="bg-white/90 backdrop-blur text-brand-navy text-xs px-5 py-2 rounded-full font-bold shadow-md w-28 text-center hover:bg-white transition-all"
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+          {/* Get the App */}
+          <div className="bg-white/90 backdrop-blur rounded-full px-4 py-2 flex items-center gap-3 shadow-xl">
+            <span className="text-xs font-bold text-brand-navy">Get the app</span>
+            <div className="flex items-center gap-1.5">
+              <div className="bg-gray-100 text-brand-navy p-1.5 rounded-full cursor-pointer hover:bg-gray-200 transition-colors">
+                <Apple size={15} />
+              </div>
+              <div className="bg-brand-navy text-white p-1.5 rounded-full cursor-pointer hover:bg-gray-800 transition-colors">
+                <Play size={15} />
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ── Floating Patient Count Badge (overlapping bottom) ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="absolute -bottom-px left-1/2 -translate-x-1/2 z-20 bg-white/95 backdrop-blur-sm px-6 py-4 rounded-t-3xl shadow-xl flex items-center gap-4 whitespace-nowrap"
+        >
+          <div className="flex -space-x-3">
+            {["/hero2.jpg", "/hero3.jpg", "/hospital3.jpeg", "/headshots.jpg"].map((src, i) => (
+              <div key={i} className="w-9 h-9 rounded-full border-2 border-white overflow-hidden bg-gray-200 shadow-sm">
+                <img src={src} alt="Patient" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          <p className="text-xs font-extrabold text-brand-navy tracking-wider uppercase">
+            1M+ Satisfied Patients With Us
+          </p>
+        </motion.div>
+
+      </div>
     </section>
   );
 }

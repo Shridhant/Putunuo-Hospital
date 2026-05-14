@@ -16,9 +16,37 @@
 :root {
   font-family: var(--font-inter);
   color: #1a1a1a;
-  background-color: #ffffff;
+  background-color: #f5f1ea;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   overflow-x: hidden;
+  background-color: #f5f1ea;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-25%);
+  }
 }
