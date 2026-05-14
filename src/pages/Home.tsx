@@ -148,7 +148,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-[#f5f1ea] font-inter text-slate-900">
+    <div className="bg-[#ffffff] font-inter text-slate-900">
       <section className="px-3 pt-3 md:px-6">
         <div className="mx-auto max-w-[1280px]">
           <FadeIn delay={0.08}>
@@ -227,7 +227,7 @@ export default function Home() {
                   whileHover={{ y: -3 }}
                   onClick={() => setSlide(index)}
                   className={`relative min-w-0 flex-1 overflow-hidden rounded-xl transition-all duration-500 ${
-                    index === slide ? "ring-2 ring-slate-900 ring-offset-2 ring-offset-[#f5f1ea]" : "opacity-60 hover:opacity-100"
+                    index === slide ? "ring-2 ring-slate-900 ring-offset-2 ring-offset-[#ffffff]" : "opacity-60 hover:opacity-100"
                   }`}
                 >
                   <img

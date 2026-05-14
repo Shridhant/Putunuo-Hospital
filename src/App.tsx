@@ -10,9 +10,9 @@ import About from "./pages/About";
 
 function AppShell() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#f5f1ea] font-inter text-slate-900 selection:bg-slate-900 selection:text-white">
+    <main className="flex min-h-screen flex-col bg-[#ffffff] font-inter text-slate-900 selection:bg-slate-900 selection:text-white">
       <Navbar />
-      <div className="flex-grow pt-24 pb-8">
+      <div className="flex-grow pt-16 pb-8">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
