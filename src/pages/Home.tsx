@@ -542,7 +542,7 @@ export default function Home() {
           ))}
         </div>
 
-        <motion.div layout className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2">
+        <motion.div layout className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:auto-rows-[15rem]">
           <AnimatePresence mode="popLayout">
             {visibleProjects.map((project, index) => (
               <motion.div
@@ -809,7 +809,7 @@ function ProjectCard({
         <img
           src={img}
           alt={title}
-          className={`h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 ${wide ? "min-h-[17rem]" : "min-h-[13rem]"}`}
+          className={`h-full w-full object-cover transition-transform duration-700 group-hover:scale-105`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
         <div className="absolute left-4 top-4 inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-white backdrop-blur-sm">
