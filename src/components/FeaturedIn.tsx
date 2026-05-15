@@ -6,7 +6,7 @@ const featuredBlogs = [
     id: 1, name: "Nagaland Post",
     desc: "Putuonuo Hospital celebrates 35th Foundation Day with achievements",
     link: "https://nagalandpost.com/putuonuo-hospital-celebrates-35th-foundation-day-with-achievements/",
-    image: "/hero2.jpg"
+    image: "/35th.webp"
   },
   {
     id: 2, name: "Eastern Mirror",
@@ -65,7 +65,7 @@ export default function FeaturedIn() {
                 alt={blog.desc}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-brand-navy/0 group-hover:bg-brand-navy/10 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-brand-accent/0 group-hover:bg-brand-accent/15 transition-colors duration-300" />
             </div>
 
             <div className="p-6 flex flex-col flex-1 relative">

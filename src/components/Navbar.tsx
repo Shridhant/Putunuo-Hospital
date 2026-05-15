@@ -8,7 +8,7 @@ const nav = [
   { label: "Home", to: "/" },
   { label: "About us", to: "/about" },
   { label: "Specialties", to: "/specialties" },
-  { label: "News", to: "/news" },
+  { label: "Featured", to: "/news" },
 
 ];
 
@@ -40,7 +40,7 @@ export default function Navbar() {
                 ))}
               </nav>
               <div className="flex items-center gap-2">
-                <button className="hidden rounded-full bg-[#d9b15d] px-5 py-2.5 text-[13px] font-medium text-slate-950 transition hover:brightness-95 sm:inline-flex">
+                <button className="bg-brand-navy text-white hover:bg-brand-accent/80 hover:text-black px-5 py-2 rounded-full text-xs font-semibold  transition-colors flex items-center gap-2 hidden sm:inline-flex">
                   Book Appointment
                 </button>
                 <button

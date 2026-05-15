@@ -29,7 +29,7 @@ const projects = [
     note: "Rapid triage, monitoring, and urgent support",
   },
   {
-    img: "/hero3.jpg",
+    img: "/hospitalimage1.jpg",
     title: "Healing Suites",
     sub: "Restorative patient rooms",
     category: "Recovery",
@@ -37,7 +37,7 @@ const projects = [
     note: "Quiet rooms built for longer recovery windows",
   },
   {
-    img: "/hero1.jpg",
+    img: "/team.jpg",
     title: "Specialist Wing",
     sub: "Integrated treatment floors",
     category: "Facilities",
@@ -45,7 +45,7 @@ const projects = [
     note: "A connected environment for specialists and staff",
   },
   {
-    img: "/hero2.jpg",
+    img: "/nurses.jpg",
     title: "Wellness Pavilion",
     sub: "Preventive care design",
     category: "Wellness",
@@ -63,19 +63,19 @@ const projects = [
 
 const spotlightSlides = [
   {
-    img: "/hero2.jpg",
+    img: "/hospital1.jpeg",
     title: "Calm spaces,\ncarefully designed for healing.",
     body:
       "From daylight strategy to circulation flow, every area is shaped to reduce stress and help patients and families feel supported from arrival to recovery.",
   },
   {
-    img: "/hospital2.jpeg",
+    img: "/nurse1.jpg",
     title: "Clinical precision\nwith a human experience.",
     body:
       "We pair specialist expertise, responsive systems, and comfortable environments so treatment feels organized, transparent, and deeply personal.",
   },
   {
-    img: "/hero3.jpg",
+    img: "/team.jpg",
     title: "Built around trust,\ncomfort, and continuity.",
     body:
       "Our teams work across diagnostics, surgery, and follow-up care to create a smooth journey instead of fragmented hospital visits.",
@@ -84,10 +84,10 @@ const spotlightSlides = [
 
 const expertiseItems = [
   { label: "Multispecialty Consults", img: "/hospital1.jpeg" },
-  { label: "Modern Diagnostics", img: "/hero1.jpg" },
-  { label: "Emergency Readiness", img: "/hospital2.jpeg" },
-  { label: "Patient Recovery Suites", img: "/hero3.jpg" },
-  { label: "Preventive Wellness", img: "/hospital3.jpeg" },
+  { label: "Modern Diagnostics", img: "/team.jpg" },
+  { label: "Emergency Readiness", img: "/nurses1.jpeg" },
+  { label: "Patient Recovery Suites", img: "/hospital3.jpeg" },
+  { label: "Preventive Wellness", img: "/doctors.jpg" },
 ];
 
 const teamMembers = [
@@ -154,7 +154,7 @@ export default function Home() {
           <FadeIn delay={0.08}>
             <div className="relative mt-3 overflow-hidden rounded-[28px]">
               <img
-                src="/hero_building.png"
+                src="/hospitalimage1.jpg"
                 alt="Putunuo Hospital exterior"
                 className="h-[520px] w-full object-cover md:h-[680px]"
               />
@@ -195,7 +195,7 @@ export default function Home() {
                       Emergency and specialist support
                     </div>
                   </div>
-                  <ArrowUpRight className="h-5 w-5 shrink-0 text-white/70 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-slate-950" />
+                  <ArrowUpRight className="h-5 w-5 shrink-0 text-white/70 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-brand-accent" />
                 </div>
                 <div className="mt-2.5 overflow-hidden rounded-[14px]">
                   <img src="/hospital1.jpeg" alt="Hospital corridor" className="h-[136px] w-full object-cover" />
@@ -226,16 +226,14 @@ export default function Home() {
                   key={item.title}
                   whileHover={{ y: -3 }}
                   onClick={() => setSlide(index)}
-                  className={`relative min-w-0 flex-1 overflow-hidden rounded-xl transition-all duration-500 ${
-                    index === slide ? "ring-2 ring-slate-900 ring-offset-2 ring-offset-[#ffffff]" : "opacity-60 hover:opacity-100"
-                  }`}
+                  className={`relative min-w-0 flex-1 overflow-hidden rounded-xl transition-all duration-500 ${index === slide ? "ring-2 ring-slate-900 ring-offset-2 ring-offset-[#ffffff]" : "opacity-60 hover:opacity-100"
+                    }`}
                 >
                   <img
                     src={item.img}
                     alt=""
-                    className={`h-[120px] w-full object-cover transition-transform duration-700 md:h-[144px] ${
-                      index === slide ? "scale-105" : "scale-100"
-                    }`}
+                    className={`h-[120px] w-full object-cover transition-transform duration-700 md:h-[144px] ${index === slide ? "scale-105" : "scale-100"
+                      }`}
                   />
                 </motion.button>
               ))}
@@ -379,7 +377,7 @@ export default function Home() {
                       {item.label}
                     </span>
                   </div>
-                  <ArrowUpRight className="relative z-10 h-4 w-4 -translate-x-2 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100" />
+                  <ArrowUpRight className="relative z-10 h-4 w-4 -translate-x-2 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-brand-accent" />
                 </motion.div>
               ))}
             </div>
@@ -431,11 +429,10 @@ export default function Home() {
               type="button"
               onClick={() => setActiveTab(tab)}
               aria-pressed={activeTab === tab}
-              className={`rounded-full px-4 py-1.5 text-[12px] transition ${
-                activeTab === tab
-                  ? "bg-slate-900 text-white"
-                  : "border border-slate-300 text-slate-600 hover:bg-white hover:text-slate-900"
-              }`}
+              className={`rounded-full px-4 py-1.5 text-[12px] transition ${activeTab === tab
+                ? "bg-slate-900 text-white"
+                : "border border-slate-300 text-slate-600 hover:bg-white hover:text-slate-900"
+                }`}
             >
               {tab}
             </motion.button>
@@ -490,8 +487,8 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <button className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-slate-300 px-5 py-2 text-[13px] transition hover:bg-slate-50">
-              Explore specialties <ArrowRight className="h-3.5 w-3.5" />
+            <button className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-slate-300 px-5 py-2 text-[13px] transition hover:bg-slate-50 group">
+              Explore specialties <ArrowRight className="h-3.5 w-3.5 group-hover:text-brand-accent" />
             </button>
           </FadeIn>
 
@@ -511,7 +508,7 @@ export default function Home() {
         <FadeIn delay={0.1}>
           <div className="relative mt-14 overflow-hidden rounded-3xl">
             <img
-              src="/hero1.jpg"
+              src="/team.jpg"
               alt="Specialist care environment"
               className="h-[420px] w-full object-cover md:h-[560px]"
             />
@@ -610,9 +607,8 @@ export default function Home() {
                       type="button"
                       aria-label={`Show review ${index + 1}`}
                       onClick={() => setReviewIdx(index)}
-                      className={`h-1.5 rounded-full transition-all ${
-                        index === reviewIdx ? "w-7 bg-slate-900" : "w-1.5 bg-slate-300 hover:bg-slate-500/60"
-                      }`}
+                      className={`h-1.5 rounded-full transition-all ${index === reviewIdx ? "w-7 bg-slate-900" : "w-1.5 bg-slate-300 hover:bg-slate-500/60"
+                        }`}
                     />
                   ))}
                 </div>
@@ -679,7 +675,7 @@ function ProjectCard({
           <div className="font-geist text-[17px] font-medium tracking-tight text-slate-900">{title}</div>
           <div className="mt-1 text-[12px] text-slate-500">{sub}</div>
         </div>
-        <div className="rounded-full border border-slate-200 bg-slate-50 p-2 transition duration-300 group-hover:border-slate-900 group-hover:bg-slate-900">
+        <div className="rounded-full bg-slate-50 p-2 transition duration-300 group-hover:border-slate-900 group-hover:bg-brand-accent">
           <ArrowUpRight className="h-4 w-4 transition duration-300 group-hover:text-white" />
         </div>
       </div>

@@ -29,7 +29,7 @@ export default function Partnerships() {
           Find top-rated hospitals around you with ease and access top-notch healthcare services tailored to your needs.
         </p>
 
-        <button className="bg-brand-navy text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center gap-3 shadow-lg">
+        <button className="bg-brand-accent text-brand-navy px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-brand-accent/80 transition-colors flex items-center gap-3 shadow-lg">
           Get started <span className="bg-white text-brand-navy p-1 rounded-full"><ArrowUpRight size={14} /></span>
         </button>
       </motion.div>
@@ -90,14 +90,14 @@ export default function Partnerships() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="w-40 h-40 md:w-56 md:h-56 bg-brand-navy rounded-3xl p-6 flex flex-col justify-center items-center text-center shadow-xl"
+            className="w-40 h-40 md:w-56 md:h-56 bg-brand-accent rounded-3xl p-6 flex flex-col justify-center items-center text-center shadow-xl"
           >
-            <p className="text-white font-medium text-sm md:text-base leading-snug mb-6">
+            <p className="text-brand-navy font-medium text-sm md:text-base leading-snug mb-6">
               Join our community of athletes.
             </p>
-            <div className="w-full bg-white/10 rounded-full px-4 py-2 flex items-center justify-between">
-              <span className="text-xs text-white/50 truncate pr-2">support@putuonuo...</span>
-              <button className="bg-white text-brand-navy p-1 rounded-full"><ArrowRight size={12} /></button>
+            <div className="w-full bg-brand-navy/10 rounded-full px-4 py-2 flex items-center justify-between">
+              <span className="text-xs text-brand-navy/50 truncate pr-2">support@putuonuo...</span>
+              <button className="bg-brand-navy text-white p-1 rounded-full"><ArrowRight size={12} /></button>
             </div>
           </motion.div>
         </div>

@@ -5,19 +5,19 @@ import Footer from "./components/Footer";
 // Pages
 import Home from "./pages/Home";
 import Specialties from "./pages/Specialties";
-import News from "./pages/News";
+import Featured from "./pages/News";
 import About from "./pages/About";
 
 function AppShell() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#ffffff] font-inter text-slate-900 selection:bg-slate-900 selection:text-white">
+    <main className="min-h-screen bg-white font-inter selection:bg-brand-accent selection:text-brand-navy flex flex-col">
       <Navbar />
       <div className="flex-grow pt-16 pb-8">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/specialties" element={<Specialties />} />
-          <Route path="/news" element={<News />} />
+          <Route path="/news" element={<Featured />} />
         </Routes>
       </div>
       <Footer />

@@ -6,13 +6,13 @@ export default function Hero() {
     <section className="w-full bg-brand-light relative pb-16">
       {/* Background Image Container with curved bottom */}
       <div className="w-full h-[90vh] md:h-[95vh] relative rounded-b-[3rem] md:rounded-b-[5rem] overflow-hidden shadow-sm">
-        
+
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/25 z-10" />
-        
+
         {/* Hero Building Image */}
         <img
-          src="/hero_building.png"
+          src="/hospitalimage1.jpg"
           alt="Putuonuo Hospital Building"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -44,7 +44,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.25 }}
             className="flex items-center bg-white/95 backdrop-blur p-1.5 rounded-full shadow-2xl"
           >
-            <button className="bg-brand-navy text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center gap-2">
+            <button className="bg-brand-accent text-brand-navy px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-brand-accent/80 transition-colors flex items-center gap-2">
               Find Hospital
               <span className="bg-white/20 p-1 rounded-full">
                 <ArrowUpRight size={14} />
@@ -62,7 +62,7 @@ export default function Hero() {
         >
           {/* Stacked Avatars */}
           <div className="flex -space-x-3">
-            {["/hero2.jpg", "/hero3.jpg", "/hospital3.jpeg"].map((src, i) => (
+            {["/hospitalimage.jpg", "/hospitalimage1.jpg", "/team.jpg"].map((src, i) => (
               <div
                 key={i}
                 className="w-11 h-11 rounded-full border-[3px] border-white bg-gray-200 overflow-hidden shadow-md"
@@ -102,7 +102,7 @@ export default function Hero() {
               <div className="bg-gray-100 text-brand-navy p-1.5 rounded-full cursor-pointer hover:bg-gray-200 transition-colors">
                 <Apple size={15} />
               </div>
-              <div className="bg-brand-navy text-white p-1.5 rounded-full cursor-pointer hover:bg-gray-800 transition-colors">
+              <div className="bg-brand-accent text-brand-navy p-1.5 rounded-full cursor-pointer hover:bg-brand-accent/80 transition-colors">
                 <Play size={15} />
               </div>
             </div>
@@ -117,7 +117,7 @@ export default function Hero() {
           className="absolute -bottom-px left-1/2 -translate-x-1/2 z-20 bg-white/95 backdrop-blur-sm px-6 py-4 rounded-t-3xl shadow-xl flex items-center gap-4 whitespace-nowrap"
         >
           <div className="flex -space-x-3">
-            {["/hero2.jpg", "/hero3.jpg", "/hospital3.jpeg", "/headshots.jpg"].map((src, i) => (
+            {["/hospitalimage.jpg", "/hospitalimage1.jpg", "/team.jpg", "/headshots.jpg"].map((src, i) => (
               <div key={i} className="w-9 h-9 rounded-full border-2 border-white overflow-hidden bg-gray-200 shadow-sm">
                 <img src={src} alt="Patient" className="w-full h-full object-cover" />
               </div>

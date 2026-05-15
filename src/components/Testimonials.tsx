@@ -37,7 +37,7 @@ export default function Testimonials() {
 
         <div className="mt-12 flex items-center justify-center gap-2">
           <button className="w-1.5 h-1.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"></button>
-          <button className="w-2 h-2 rounded-full bg-brand-navy"></button>
+          <button className="w-2 h-2 rounded-full bg-brand-accent"></button>
           <button className="w-1.5 h-1.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"></button>
         </div>
       </motion.div>

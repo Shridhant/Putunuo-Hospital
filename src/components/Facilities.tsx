@@ -29,7 +29,7 @@ export default function Facilities() {
               />
               <Search className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
             </div>
-            <button className="bg-brand-navy text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center gap-2 whitespace-nowrap">
+            <button className="bg-brand-accent text-brand-navy px-6 py-3 rounded-full text-sm font-semibold hover:bg-brand-accent/80 transition-colors flex items-center gap-2 whitespace-nowrap">
               View All <ArrowRight size={14} />
             </button>
           </div>
@@ -71,7 +71,7 @@ export default function Facilities() {
             <button className="w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 hover:bg-white transition-colors bg-transparent">
               <ArrowLeft size={16} />
             </button>
-            <button className="w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg">
+            <button className="w-12 h-12 bg-brand-accent text-brand-navy rounded-full flex items-center justify-center hover:bg-brand-accent/80 transition-colors shadow-lg">
               <ArrowRight size={16} />
             </button>
           </div>

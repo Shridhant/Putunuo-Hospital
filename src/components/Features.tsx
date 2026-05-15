@@ -27,7 +27,7 @@ export function ExploreOptions() {
           <p className="text-xl md:text-2xl font-medium text-brand-navy leading-snug">
             Putuonuo is a trusted platform connecting patients with top specialists across the state.
           </p>
-          <button className="bg-brand-navy text-white px-6 py-3 rounded-full text-xs font-medium hover:bg-gray-800 transition-colors flex items-center justify-between w-max gap-4 group">
+          <button className="bg-brand-accent text-brand-navy px-6 py-3 rounded-full text-xs font-medium hover:bg-brand-accent/80 transition-colors flex items-center justify-between w-max gap-4 group">
             Learn More <div className="bg-white text-brand-navy p-1 rounded-full group-hover:scale-110 transition-transform"><ArrowRight size={12} /></div>
           </button>
         </motion.div>
@@ -83,7 +83,7 @@ export function ExploreOptions() {
               <button className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors">
                 <ArrowLeft size={16} />
               </button>
-              <button className="w-10 h-10 bg-brand-navy text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+              <button className="w-10 h-10 bg-brand-accent text-brand-navy rounded-full flex items-center justify-center hover:bg-brand-accent/80 transition-colors">
                 <ArrowRight size={16} />
               </button>
             </div>
@@ -107,7 +107,7 @@ export function Excellence() {
         <div className="flex items-center gap-2 bg-gray-50 p-1 rounded-full w-max border border-gray-100">
           <button className="w-8 h-8 flex items-center justify-center bg-gray-200 rounded-full text-gray-600"><ArrowUpRight size={16} /></button>
           <button className="text-xs font-semibold text-gray-600 px-4 py-2 rounded-full hover:bg-gray-200 transition-colors">Clinic</button>
-          <button className="text-xs font-semibold text-white bg-brand-navy px-4 py-2 rounded-full shadow-md">Pharmacy</button>
+          <button className="text-xs font-semibold text-brand-navy bg-brand-accent px-4 py-2 rounded-full shadow-md">Pharmacy</button>
           <button className="text-xs font-semibold text-gray-600 px-4 py-2 rounded-full hover:bg-gray-200 transition-colors">Hospital</button>
         </div>
 
@@ -125,14 +125,14 @@ export function Excellence() {
               </p>
             </div>
             <div className="flex flex-col gap-6">
-              <button className="bg-brand-navy text-white px-5 py-2.5 rounded-full text-xs font-medium w-max flex items-center gap-2">
+              <button className="bg-brand-accent text-brand-navy px-5 py-2.5 rounded-full text-xs font-medium w-max flex items-center gap-2">
                 See Details <div className="bg-white/20 p-1 rounded-full"><ArrowRight size={12} /></div>
               </button>
               <div className="flex gap-2">
                 <button className="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center text-white hover:bg-white/10 transition-colors">
                   <ArrowLeft size={16} />
                 </button>
-                <button className="w-10 h-10 bg-brand-navy text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+                <button className="w-10 h-10 bg-brand-accent text-brand-navy rounded-full flex items-center justify-center hover:bg-brand-accent/80 transition-colors">
                   <ArrowRight size={16} />
                 </button>
               </div>
@@ -160,7 +160,7 @@ export function Excellence() {
           </div>
           <div className="flex flex-col gap-4 mt-4">
             <div className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center">
-              <div className="w-3 h-3 bg-brand-navy" style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}></div>
+              <div className="w-3 h-3 bg-brand-accent" style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}></div>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               Our top-tier medical facilities offer a comprehensive range of services, including advanced diagnostics, specialized treatment centers, and 24/7 emergency care.

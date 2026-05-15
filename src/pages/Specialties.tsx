@@ -36,7 +36,7 @@ export default function Specialties() {
             return (
               <FadeIn key={spec.id} delay={index * 0.1}>
                 <div className="bg-white p-8 rounded-[28px] shadow-[0_8px_30px_rgba(15,23,42,0.04)] border border-slate-200/60 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)] hover:-translate-y-1 transition-all duration-300 group h-full flex flex-col">
-                  <div className="w-14 h-14 bg-slate-50 border border-slate-100 text-slate-900 rounded-[18px] flex items-center justify-center mb-6 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                  <div className="w-14 h-14 bg-brand-light text-brand-navy rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent group-hover:text-brand-navy transition-colors duration-300">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="font-geist font-medium text-[22px] tracking-tight text-slate-950 mb-3">
